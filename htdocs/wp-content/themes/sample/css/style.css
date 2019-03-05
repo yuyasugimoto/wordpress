@@ -1,0 +1,165 @@
+/*-----declaration------*/
+@charset "UTF-8";
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+	margin:0;
+	padding:0;
+	border:0;
+	outline:0;
+	font-size:100%;
+	vertical-align:baseline;
+	background:transparent;
+	list-style: none;
+}
+/*--clearfix--*/
+.clearfix {
+	zoom: 1;
+}
+.clearfix:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+/*-----allocer-----*/
+html {
+	font-size: calc(100% + 0.2vw);
+}
+body{
+	font-family: "メイリオ","Hiragino Kaku Gothic Pro","sans-serif";
+	color: #110000;
+	/*background-color: #a9a9a9;*/
+}
+#wrapper{
+	background-image: url("../images/bg/shattered.png");
+}
+.content{
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+.main{
+	margin-top: 20px;
+}
+.active{
+	display: block;
+	color: #000000;
+	text-align: center;
+	background-color: rgba(0,0,0,.1);
+	padding-top: 10px;
+	padding-right: 10px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+}
+.logo{
+	display: block;
+	margin: 0 auto;
+}
+.menu li a{
+	display: block;
+	color: #000000;
+	text-decoration: none;
+	text-align: center;
+	padding-top: 10px;
+	padding-right: 10px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+}
+.menu li a:hover{
+	color: #fff;
+	background-color: rgba(0,0,0,.4);
+}
+.menu h2{
+	font-size: 18px;
+	text-align: center;
+	border-top: solid 1px #000000;
+	border-bottom: solid 1px #000000;
+	margin-top: 20px;
+}
+.box{
+	background-color: #ffffff;
+	margin-top: 20px;
+	margin-right: 20px;
+	margin-bottom: 20px;
+	margin-left: 20px;
+}
+.box a{
+	display: block;
+	color: #000000;
+	text-decoration:none;
+	padding-bottom: 20px;
+	word-wrap: break-word;/*文字の折り返しを自動でする。今後仕様確認する*/
+}
+.box img{
+	max-width: 100%;
+	height: auto;
+}
+.box_text{
+	padding-left: 20px;
+}
+.comming{
+	display: none;
+}
+footer{
+	font-size: 12px;
+	text-align: center;
+	background-color: #a9a9a9;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+/*-----responsive 768px以上-----*/
+@media (min-width: 768px){
+	.content{
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+	header{
+		width: 20%;
+		float: left;
+		padding-top: 20px;
+	}
+	.main{
+		width: 80%;
+		float: left;
+		padding-top: 20px;
+		margin-top: 0;
+	}
+	.col_01{
+		width: 33.3%;
+		float: left;
+		padding-right: 0;
+	}
+	.col_02{
+		width: 33.3%;
+		float: left;
+	}
+	.col_03{
+		width: 33.3%;
+		float: left;
+	}
+	.box{
+		background-color: #ffffff;
+		margin-top: 0;
+		margin-right: 10px;
+		margin-bottom: 20px;
+		margin-left: 10px;
+	}
+	.box a:hover{
+		color: #ffffff;
+		background-color: rgba(0,0,0,.4);
+	}
+	.comming{
+		display: block;
+		max-width: 100%;
+		height: auto;
+	}
+}

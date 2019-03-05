@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<!--
+	IE8+に対して「IE=edge」と指定することで、利用できる最も互換性の高い最新のエンジンを使用するよう指示できます
+参考: https://www.modern.ie/en-us/performance/how-to-use-x-ua-compatible
+-->
+    <!--
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+-->
+<meta name="robots" content="noindex,nofollow">
+<meta name="description" content="#">
+<link rel="stylesheet" href="css/style.css">
+<title>蕎麦屋 生粉紡</title>
+<!-- まずはjQueryの読み込み -->
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+//topへ戻るボタン
+$(function() {
+	var topBtn = $('#top_btn');   
+	topBtn.hide();
+	$(window).scroll(function () {
+		if ($(this).scrollTop() > 100) {
+			topBtn.fadeIn();
+		} else {
+			topBtn.fadeOut();
+		}
+	});
+	topBtn.click(function () {
+		$('body,html').animate({
+			scrollTop: 640
+		}, 500);
+		return false;
+	});
+});
+$(function() {
+	var menuBtn = $('#menu_btn');
+	menuBtn.hide();
+	$(window).scroll(function () {
+		if ($(this).scrollTop() >= 640) {
+			menuBtn.fadeIn();
+		}
+		else{
+			menuBtn.fadeOut();
+		}
+	});
+});
+//高さ取得
+$(function(){
+	var height = $('#menu');
+	console.log(menu.height());
+});
+	//ぬるぬる
+	$(function(){
+		$('a[href^=#]').click(function(){
+			var speed = 1000;
+			var href= $(this).attr("href");
+			var target = $(href == "#" || href == "" ? 'html' : href);
+			var position = target.offset().top;
+			$("html, body").animate({scrollTop:position}, speed, "swing");
+			return false;
+		});
+	});
+</script>
+</head>
+<body>
+	<ul>
+		<li id="top_btn"><a href="#wrap">トップへ戻る</a>
+		</li>
+		<li id="menu_btn"><a href="#menu">お品書き</a>
+			<ul id="menu_drop">
+				<li><a href="#cold_soba">冷たいそば</a></li>
+				<li><a href="#hot_soba">温かいそば</a></li>
+				<li><a href="#set_soba">セットメニュー</a></li>
+				<li><a href="#dattan_soba">だったんそば</a></li>
+				<li><a href="#tanpin">単品料理</a></li>
+				<li><a href="#drink">お飲み物</a></li>
+				<li><a href="#omochikaeri">お持ち帰り</a></li>
+			</ul>
+		</li>
+	</ul>
+	<div id="top">
+		<header></header>
+		<ul class="clearfix">
+			<li><img class="top_font item_01" src="img/top/font/top_box_01.png" alt="そば粉だけの贅沢"></li>
+			<li class="top_font item_02"><img src="img/top/font/top_box_02.png" alt="そば処"></li>
+			<li class="top_font item_03"><img src="img/top/font/top_box_03.png" alt="生粉紡"></li>
+		</ul>
+	</div><!--end #top-->
+	<div class="color_box_bl20">
+		<div id="wrapper_01">
+			<div id="content">
+				<div class="color_box_black">
+					<h1>そば処　<ruby>生<rt>き</rt>粉<rt>こ</rt>紡<rt>ぼう</rt></ruby></h1>
+					<nav>
+						<ul>
+							<li>
+								<a href="#menu">
+									<img src="img/content/nav/list_mark.png" alt="リストマーカー"><span>お品書き</span>
+								</a>
+							</li>
+							<li>
+								<a href="#good">
+									<img src="img/content/nav/list_mark.png" alt="リストマーカー"><span>こだわり</span>
+								</a>
+							</li>
+							<li><a href="#access">
+								<img src="img/content/nav/list_mark.png" alt="リストマーカー"><span>店舗案内</span>
+							</a>
+						</li>
+					</ul>
+				</nav><!--end #nav-->
+				<article>
+					<section class="soba_uchi">
+						<h2>生粉紡のそば打ち</h2>
+						<p>生粉紡での打ち方は<br>
+							一般的な打ち方と少し異なっており<br>
+							「きそば」「生粉（きこ）打ち」を<br>
+							意識したものとなっています。
+						</p>
+						<p>十割そばは切れやすく<br>
+							短いものだという印象がありますが、<br>
+							新鮮な粉と生粉打ちで麺を打てば<br>
+							「良質なそば」が得られます。</p>
+						</section><!--end soba_uchi-->
+						<section class="soba_tuyu">
+							<h2>そばとつゆの相性</h2>
+							<p>
+								少量のそばを、何も加えないつゆに少し浸けます。<br>
+								それを口に含んで噛んでみます。<br>
+								この時に、そばとつゆが融け合い、<br>香と旨みがひとつになってハーモニーを感じます。<br>
+								そばが生き、つゆが生きたときに<br>相性が良いといいます。<br>
+								辛つゆの仕掛けがこれです。
+							</p>
+						</section><!--end soba_tuyu-->
+					</article>
+				</div><!--end color_box_black-->
+			</div><!--end content-->
+		</div><!--end wrapper_01-->
+	</div><!--end color_box_bl20-->
+	<div id="menu" class="menu">
+		<ul>
+			<li id="cold_soba" class="odd_box">
+				<input type="checkbox" id="odd_01_panel" class="on-off_01">
+				<label for="odd_01_panel" class="odd_label">
+					<div class="obox_title">
+						<h3><span class="odd_h3_font">冷たいそば</span><img src="img/menu/menu_nav/nav_cold.jpg" alt="冷たいそば"></h3>
+					</div><!--end menu_title-->
+					<p>
+						<ul class="menu_ul">
+							<li>
+								<ul class="menu_ul_l">
+									<li>
+										<dl class="mizu_soba ">
+											<dt class="title">水そば（天然水・岩塩・香物）</dt>
+											<dd class="product">せいろ小盛り（生そば１２０ｇ）</dd>
+											<dd class="price">４００円</dd>
+											<dd class="product">せいろ盛り（生そば１７０ｇ）</dd>
+											<dd class="price">５００円</dd>
+											<dd class="product">板盛り（生そば２００ｇ）</dd>
+											<dd class="price">６００円</dd>
+										</dl>
+									</li>
+									<li>
+										<dl class="mori_soba">
+											<dt class="title">
+												盛りそば（つゆ・ねぎ・練りわさび・香物）<br>
+												（板盛りは山わさび・岩塩・のり付き）
+											</dt>
+											<dd class="product">せいろ小盛り（生そば１２０ｇ）</dd>
+											<dd class="price">５００円</dd>
+											<dd class="product">せいろ盛り（生そば１７０ｇ）</dd>
+											<dd class="price">６００円</dd>
+											<dd class="product">板盛り（生そば２００ｇ）</dd>
+											<dd class="price">７００円</dd>
+											<dd class="product">板大盛り（生そば３００ｇ）</dd>
+											<dd class="price">９００円</dd>
+											<dd class="product">板得盛り（生そば４００ｇ）</dd>
+											<dd class="price senen">１，２００円</dd>
+										</dl>
+									</li>
+									<li>
+										<dl class="yakumi">
+											<dt class="title">薬味</dt>
+											<dd class="product">山わさび</dd>
+											<dd class="price">１５０円</dd>
+											<dd class="product">辛み大根</dd>
+											<dd class="price">１５０円</dd>
+											<dd class="product">とろろ</dd>
+											<dd class="price">１５０円</dd>
+											<dd class="product">きざみ海苔</dd>
+											<dd class="price">５０円</dd>
+											<dd class="product">
+												<span class="space">おにぎり（丸抜き入り）<br>
+													※そばの実が入ったおにぎり</span>
+												</dd>
+												<dd class="price">１００円</dd>
+												<dd class="product">ごはん（一膳）</dd>
+												<dd class="price">１００円</dd>
+											</dl>
+										</dl>
+									</li>
+								</ul><!--menu_ul_l-->
+								<ul class="menu_ul_r">
+									<li>
+										<dl class="syun_soba">
+											<dt class="title">種もの（生そば各２００ｇ）</dt>
+											<dd class="product">冷やしたぬき</dd>
+											<dd class="price">７５０円</dd>
+											<dd class="product">おろしぶっかけ</dd>
+											<dd class="price">７５０円</dd>
+											<dd class="product">辛味おろしぶっかけ</dd>
+											<dd class="price">８００円</dd>
+											<dd class="product">とろろぶっかけ</dd>
+											<dd class="price">８００円</dd>
+											<dd class="product">納豆ぶっかけ</dd>
+											<dd class="price">８５０円</dd>
+											<dd class="product">つけとろろ（山わさび芋）</dd>
+											<dd class="price">８５０円</dd>
+											<dd class="product">蕎麦サラダ</dd>
+											<dd class="price">９００円</dd>
+											<dd class="product">かき揚げ（板）</dd>
+											<dd class="price">１，０５０円</dd>
+											<dd class="product">板盛り割子(おろし,とろろ,納豆,なめこ)</dd>
+											<dd class="price">１，１５０円</dd>
+											<dd class="product">海老天おろしぶっかけ</dd>
+											<dd class="price">１，２５０円</dd>
+											<dd class="product">天盛り（板盛り＋天ぷら）</dd>
+											<dd class="price">１，３５０円</dd>
+											<dd class="product">鴨せいろ</dd>
+											<dd class="price">１，３５０円</dd>
+										</dl>
+									</li>
+									<li>
+										<dl class="ohmori">
+											<dt class="product">※そば大盛り（生そば１００ｇ増し）</dt>
+											<dd class="price">１００円増</dd>
+										</dl>
+									</li>	
+								</ul><!--menu_ul_r-->	
+							</li>		
+						</ul><!--end menu_ul-->
+					</p>
+				</label>
+			</li>
+			<li  id="hot_soba" class="even_box">
+				<input type="checkbox" id="even_01_panel" class="on-off_01">
+				<label for="even_01_panel" class="even_label">
+					<div class="ebox_title">
+						<h3><img src="img/menu/menu_nav/nav_hot.jpg" alt="温かいそば"><span class="even_h3_font">温かいそば</span></h3>
+					</div><!--end menu_title-->
+					<p>
+						<ul class="menu_ul">
+							<li>
+								<dl class="hot_soba">
+									<dt class="title">温かいそば</dt>
+									<dd class="product">中かけそば（生そば１７０ｇ）</dd>
+									<dd class="price">６００円</dd>
+									<dd class="product">かけそば（生そば２００ｇ）</dd>
+									<dd class="price">７００円</dd>
+								</dl>
+							</li>
+							<li>
+								<dl class="hot_syun_soba">
+									<dt class="title">種もの　（生そば各２００ｇ）</dt>
+									<dd class="product">月見そば</dd>
+									<dd class="price">７５０円</dd>
+									<dd class="product">たぬきそば</dd>
+									<dd class="price">７５０円</dd>
+									<dd class="product">なめこそば</dd>
+									<dd class="price">７８０円</dd>
+									<dd class="product">かしわそば</dd>
+									<dd class="price">８００円</dd>
+									<dd class="product">肉南ばん</dd>
+									<dd class="price">８５０円</dd>
+									<dd class="product">カレー南ばん</dd>
+									<dd class="price">８５０円</dd>
+									<dd class="product">五目鮮菜そば</dd>
+									<dd class="price">８５０円</dd>
+									<dd class="product">かき揚げそば</dd>
+									<dd class="price">１，０５０円</dd>
+									<dd class="product">ニシンそば</dd>
+									<dd class="price">１，１００円</dd>
+									<dd class="product">えび天そば</dd>
+									<dd class="price">１，２５０円</dd>
+									<dd class="product">鴨南ばんそば</dd>
+									<dd class="price">１，３５０円</dd>
+									<dd class="product">海鮮焼きそば</dd>
+									<dd class="price">１，４５０円</dd>
+								</dl>
+							</li>
+							<li>
+								<dl class="ohmori">
+									<dt class="product">※そば大盛り（生そば１００ｇ増し）</dt>
+									<dd class="price">１００円増</dd>
+								</dl>
+							</li>
+						</ul>
+					</p>
+				</label>
+			</li>
+			<li id="set_soba" class="odd_box">
+				<input type="checkbox" id="odd_02_panel" class="on-off_01">
+				<label for="odd_02_panel" class="odd_label">
+					<div class="obox_title">
+						<h3><span class="odd_h3_font">セットメニュー</span><img src="img/menu/menu_nav/nav_set.jpg" alt="セットメニュー"></h3>
+					</div><!--end menu_title-->
+					<p>
+						<ul class="menu_ul">
+							<li>
+								<dl class="lunch_a">
+									<dt class="sub_title">ランチAセット</dt>
+									<dd class="product">かき揚げ丼＋小かけそば又は小せいろ盛り＋野菜サラダ＋漬け物 (生そば１２０ｇ）
+									</dd>
+									<dd class="price">７８０円</dd>
+								</dl>
+							</li>
+							<li>
+								<dl class="lunch_b">
+									<dt class="sub_title">ランチBセット</dt>
+									<dd class="product">ミニかき揚げ丼＋中かけそば又はせいろ盛り＋野菜サラ ダ＋漬け物（生そば１７０ｇ）</dd>
+									<dd class="price">７８０円</dd>
+								</dl>
+							</li>
+							<li>
+								<dl class="lunch_c">
+									<dt class="sub_title">ランチCセット</dt>
+									<dd class="product">ミニとり天丼＋中かけそば又はせいろ盛り＋野菜サラ ダ＋漬け物（生そば１７０ｇ）</dd>
+									<dd class="price">７８０円</dd>
+								</dl>
+							</li>
+							<li>
+								<dl class="lunch_d">
+									<dt class="sub_title">ランチＤセット</dt>
+									<dd class="product">ミニぶた丼＋中かけそば又はせいろ盛り＋ 野菜サラダ＋漬け物（生そば１７０ｇ）</dd>
+									<dd class="price">７８０円</dd>
+								</dl>
+							</li>
+							<li>
+								<dl class="lunch_e">
+									<dt class="sub_title">ランチＥセット</dt>
+									<dd class="product">
+										※月・火曜日のみ<br>
+										副食セット＋中かけそば又はせいろ盛りそば（生そば１７ ０ｇ）
+									</dd>
+									<dd class="price">７８０円</dd>
+								</dl>
+							</li>
+							<li>
+								<dl class="ohmori">
+									<dt class="product">※そば大盛り（生そば１００ｇ増し）</dt>
+									<dd class="price">１００円増</dd>
+								</dl>
+							</li>
+							<li>
+								<dl class="lunch_curry">
+									<dt class="sub_title">そば屋のカレー</dt>
+									<dd class="product">カレーライス＋野菜サラダ＋漬け物</dd>
+									<dd class="price">７８０円</dd>
+								</dl>
+							</li>
+							<li>
+								<dl class="ohmori">
+									<dt class="product">※そば大盛り（生そば１００ｇ増し）</dt>
+									<dd class="price">１００円増</dd>
+								</dl>
+							</li>
+						</ul>
+					</p>
+				</label>
+			</li>
+			<li id="dattan_soba" class="even_box">
+				<input type="checkbox" id="even_02_panel" class="on-off_01">
+				<label for="even_02_panel" class="even_label">
+					<div class="ebox_title">
+						<h3><img src="img/menu/menu_nav/nav_data.jpg" alt="だったんそば"><span class="even_h3_font">だったんそば</span></h3>
+					</div><!--end menu_title-->
+					<p>
+						<ul class="menu_ul">
+							<li>
+								<dl class="cyuumon_soba">
+									<dt class="title">だったんそば</dt>
+									<dd class="product">せいろ盛り（生そば１７０ｇ・並つゆ）</dd>
+									<dd class="price">時価</dd>
+									<dd class="product">板盛り（生そば２００ｇ・並つゆ）</dd>
+									<dd class="price">時価</dd>
+								</dl>
+							</li>
+							<li>
+								<dl class="siro">
+									<dt class="title">白つゆ</dt>
+									<dd class="product">韃靼そば用に調合した魚介味のつゆ</dd>
+									<dd class="price">追加料金あり</dd>
+								</dl>
+							</li>
+							<li>
+								<dl class="sobacya">
+									<dt class="title">だったんそば茶</dt>
+									<dd class="product">５００ｇ（１袋）</dd>
+									<dd class="price">時価</dd>
+									<dd class="product">１ｋｇ　（１袋）</dd>
+									<dd class="price">時価</dd>
+								</dl>
+							</li>
+						</ul>
+					</p>
+				</li>
+			</label>
+			<li id="tanpin" class="odd_box">
+				<input type="checkbox" id="odd_03_panel" class="on-off_01">
+				<label for="odd_03_panel" class="odd_label">
+					<div class="obox_title">
+						<h3><span class="odd_h3_font">単品料理</span><img src="img/menu/menu_nav/nav_only.jpg" alt="単品料理"></h3>
+					</div><!--end menu_title-->
+					<p>
+						<ul class="menu_ul">
+							<li>
+								<dl class="tanpin">
+									<dt class="title">単品料理</dt>
+									<dd class="product">通し</dd>
+									<dd class="price">１５０円</dd>
+									<dd class="product">そばクレープ（辛子みそ味）</dd>
+									<dd class="price">１３０円</dd>
+									<dd class="product">そば味噌</dd>
+									<dd class="price">２３０円</dd>
+									<dd class="product">身欠ニシン　山椒漬け（半尾／季節）</dd>
+									<dd class="price">２３０円</dd>
+									<dd class="product">わさび芋</dd>
+									<dd class="price">３５０円</dd>
+									<dd class="product">板わさ</dd>
+									<dd class="price">３５０円</dd>
+									<dd class="product">だし巻きたまご</dd>
+									<dd class="price">４５０円</dd>
+									<dd class="product">そばがき（焼き味噌）</dd>
+									<dd class="price">５５０円</dd>
+									<dd class="product">天ぷら盛り合わせ（一人前）</dd>
+									<dd class="price">６５０円</dd>
+									<dd class="product">えび天（１本）</dd>
+									<dd class="price">時価</dd>
+									<dd class="odd_memo">
+										※内容は予告無く変更/終了する場合がございます。店頭にてご確認下さい。
+									</dd>
+								</dl>
+							</li>
+						</ul>
+					</p>
+				</label>
+			</li>
+			<li id="drink" class="even_box">
+				<input type="checkbox" id="even_03_panel" class="on-off_01">
+				<label for="even_03_panel" class="even_label">
+					<div class="ebox_title">
+						<h3><img src="img/menu/menu_nav/nav_drink.jpg" alt="お飲み物"><span class="even_h3_font">お飲み物</span></h3>
+					</div><!--end menu_title-->
+					<p>
+						<ul class="menu_ul">
+							<li>
+								<dl class="glass">
+									<dt class="title">お飲み物</dt>
+									<dd class="product">発泡酒（５００ｍｌ）</dd>
+									<dd class="price">３００円</dd>
+									<dd class="product">ビール（生中瓶）</dd>
+									<dd class="price">４５０円</dd>
+									<dd class="product">日本酒（正一合）</dd>
+									<dd class="price">３００円より</dd>
+									<dd class="product">焼酎（正一合）</dd>
+									<dd class="price">３５０円より</dd>
+									<dd class="product">ウーロン茶</dd>
+									<dd class="price">１００円</dd>
+									<dd class="product">ジュース</dd>
+									<dd class="price">１００円</dd>
+									<dd class="product">ビールテイスト</dd>
+									<dd class="price">２２０円</dd>
+								</dl>
+							</li>
+							<li>
+								<dl class="bottle">
+									<dt class="title">ボトル</dt>
+									<dd class="product">そば焼酎（十割：５００ｍｌ）</dd>
+									<dd class="price">１，８００円</dd>
+									<dd class="product">そば焼酎（雲海：９００ｍｌ</dd>
+									<dd class="price">２，１００円</dd>
+									<dd class="product">その他</dd>
+									<dd class="price">店内表示</dd>
+								</dl>
+							</li>
+							<li>
+								<dl class="set">
+									<dt class="title">セットメニュー<span>※晩酌セットは夜のみ</span></dt>
+									<dt class="sub_title">晩酌セットＡ</dt>
+									<dd class="product">
+										清酒（上撰）１合又は発泡酒＋酒肴小箱（３～４品）　　
+									</dd>
+									<dd class="price">９００円</dd>
+									<dt class="sub_title">晩酌セットＢ</dt>
+									<dd class="product">
+										清酒（上撰）１合又は発泡酒＋酒肴小箱（３～４品）＋せいろ盛り
+									</dd>
+									<dd class="price">１，２００円</dd>
+									<dt class="sub_title">晩酌セットＣ</dt>
+									<dd class="product">
+										清酒（純米酒：北の錦）１合又は中瓶ビール＋酒肴小箱 （３～４品）
+									</dd>
+									<dd class="price">１，０５０円</dd>
+									<dt class="sub_title">晩酌セットＤ</dt>
+									<dd class="product">
+										清酒（純米酒：北の錦）１合又は中瓶ビール＋酒肴 小箱（３～４品）＋せいろ盛り
+									</dd>
+									<dd class="price">１，３５０円</dd>
+									<dt class="sub_title">晩酌セットＥ（要予約）</dt>
+									<dd class="product">
+										清酒（純米酒：北の錦）１合又は中瓶ビール＋酒肴 大箱（５～６品）＋せいろ盛り
+									</dd>
+									<dd class="price">１，７５０円</dd>
+								</dl>
+							</li>
+						</ul>
+					</p>
+				</label>
+			</li>
+			<li id="omochikaeri" class="odd_box">
+				<input type="checkbox" id="odd_04_panel" class="on-off_01">
+				<label for="odd_04_panel" class="odd_label">
+					<div class="obox_title">
+						<h3><span class="odd_h3_font">お持ち帰り</span><img src="img/menu/menu_nav/nav_take.jpg" alt="お持ち帰り"></h3>
+					</div><!--end menu_title-->
+					<p>
+						<ul class="menu_ul">
+							<li>
+								<dl class="tanpin">
+									<dt class="title">お持ち帰り用　生そば</dt>
+									<dd class="product"><span class="">１人前２００ｇ（つゆ付き）</span></dd>
+									<dd class="price">５００円</dd>
+								</dl>
+							</li>
+						</ul>
+					</p>
+				</label>
+			</li>
+		</li>
+	</ul><!--end menu ul-->
+</div><!--end #menu-->
+<!--こだわり-->
+<div class="color_box_bl20">
+	<div id="good" class="good">
+		<article>
+			<section class="kone">
+				<h3>
+					積層繊維状化<br>
+					【こね】の極意
+				</h3>
+				<p>
+					こねることとは「規則的に層を重ねること」と考えます。この工程では菊練りは不要で、へそ出しは意識しません。これは食パンの生地の応用で、割ける方向に層状、繊維状の流れを作ります。こね終えた玉は円形状で、内部構造(層の流れ)は中心から放射状に繊維が出来ている状態です。
+				</p>
+			</section>
+			<section class="nobasi">
+				<h3>
+					調賃延し脱水<br>
+					【延し】の極意
+				</h3>
+				<p>
+					内部構造を壊さぬよう延しの方向を意識します。地延しはほんの少しで十分です。丸出しは行ないません。四つ出しは一般的な方法とは異なり、巻き付け延しは行ないません。麺棒で右側、左側を肉分けしながら全体を長方形に近づけます。ある程度の長方形が出来たら、幅を維持しながら薄く延します。これは茹で上がった麺の「コシ」に関係します。四つ出し、肉分け、延しを方向を変えて行い(粗延し)、二本の麺棒を使い、板の厚さと棒の転がり具合を手で感じ取り、厚さを調整します(本延し)。
+				</p>
+			</section>
+			<section class="cut">
+				<h3>
+					延し目切断<br>
+					【包丁】の極意
+				</h3>
+				<p>
+					延されたそば板を左から右、更に手前から奥にたたみます（四枚重ね）。ここで手前に残る丸みを折ってしまうと、麺の長さは延し幅の半分になってしまいます。そのため駒板は手前の丸みにはのせません。
+					丸みをつぶさないようつぶし切り（落とし包丁）ではなく、斜め前方への押し出し切り（すり包丁）をします。
+				</p>
+			</section>
+		</article>
+	</div><!--end good-->
+</div><!--end color_box_bl20-->
+<!---->
+<div id="access" class="clearfix">
+	<div class="col_01">
+		<dl>
+			<dt>そば処生粉紡（そばどころきこぼう）</dt>
+			<dd>
+				北海道札幌市東区北35条東16丁目1-29<br>
+				電話011-781-6598
+			</dd>
+			<dt>アクセス</dt>
+			<dd>
+				地下鉄東豊線新道東2番出口から徒歩2分<br>
+			</dd>
+			<dt>営業時間　<span class="small">※臨時休業中</span></dt>
+			<dd>
+				通常午前11時～午後2時<br>
+				定休日<br>
+				毎週水曜日、木曜日<br>
+				（但し貸切営業日となる場合があります）<br>
+				※年末年始・お盆は変則休とさせて頂きます<br>
+				※その他変則休は店頭張り紙にてお知らせ
+			</dd>
+			<dt>その他</dt>
+			<dd>
+				※全席「禁煙」をお願いしています。ご協力下さい。<br>
+				※ご注文により、配膳に時間差が生じる場合があります。ご了承下さい。<br>
+				※営業時間外での会合・打ち合わせなど、ご相談下さい。<br>
+				※貸切り日となる場合があります。ご確認下さい。（事前表示）<br>
+				※当店は、道産ソバの石臼碾き（丸抜き）のみを手打ちにしています。（産地はその時々で変わります。）<br>
+				※生粉打ちを指導しています。（詳細はお尋ね下さい。）
+			</dd>
+		</dl>
+	</div><!--end col_01-->
+	<div class="col_02">
+		<p>
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2912.9425652595974!2d141.36734131502368!3d43.10572189567778!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f0b2f2dbb071815%3A0xa01573cd27fe4152!2z44Gd44Gw5YemIOeUn-eyiee0oQ!5e0!3m2!1sja!2sjp!4v1467596033227" width="440" height="460" frameborder="0" style="border:0" allowfullscreen></iframe>
+		</p>
+	</div><!--end col_02-->
+</div><!--end access-->
+<div class="color_box_bl20">
+	<footer><small>Copyright 2016 sobadokoro kikobou</small></footer>
+</div><!--end color_box_bl20-->
+</body>
+</html>

@@ -1,0 +1,82 @@
+/*-----declaration------*/
+@import url(style.css);
+/*
+html,
+body{
+	height: auto;
+}
+*/
+.col_01{
+	width: 100%;
+	padding-bottom: 20px;
+}
+.box{
+	width: 80%;
+	padding: 20px;
+	margin: 0 auto;
+}
+.box img{
+	display: block;
+	margin: 0 auto;
+}
+.box_text{
+	padding: 0;
+}
+.box_text p{
+	padding-left: 15px;
+	margin-top: 10px;
+}
+.box h3{
+	font-size: 18px;
+	color: #ffffff;
+	background-color: #a9a9a9;
+	padding-top: 5px;
+	padding-right: 5px;
+	padding-bottom: 5px;
+	padding-left: 5px;
+	border-left: solid 15px #ff00ff;
+}
+.box h4{
+	font-size: 18px;
+	color: #ffffff;
+	background-color: #c0c0c0;
+	padding-top: 3px;
+	padding-right: 3px;
+	padding-bottom: 3px;
+	padding-left: 5px;
+}
+article{
+	padding-top: 20px;
+}
+article > .text_top{
+	padding-top: 0;
+}
+section{
+	padding-top: 10px;
+}
+.name{
+	font-size: 25px;
+	font-weight: bold;
+}
+.name + p{
+	font-size: 18px;
+	font-weight: bold;
+	margin-top: 0;
+}
+.paper li{
+	display: inline-block;
+	font-size: 18px;
+	font-weight: bold;
+	padding-top: 10px;
+	margin-left: 20px;
+}
+.box a:hover{
+	color: #4169e1;
+	background-color: transparent;/*背景を透明にする*/
+}
+.brackets:before{
+	content: "[-";
+}
+.brackets:after{
+	content: "-]";
+}
